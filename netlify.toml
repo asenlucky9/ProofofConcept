@@ -1,11 +1,12 @@
 [build]
-  command = "cd assignment-tracker && npm install && npm run build"
+  command = "cd assignment-tracker && npm install --legacy-peer-deps && npm run build"
   publish = "assignment-tracker/dist"
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_FLAGS = "--no-optional"
+  NPM_FLAGS = "--legacy-peer-deps"
   CI = "true"
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"
