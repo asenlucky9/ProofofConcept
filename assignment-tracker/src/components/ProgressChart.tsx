@@ -61,6 +61,7 @@ export default function ProgressChart({ assignments }: ProgressChartProps) {
               </span>
             </div>
             <div className="progress-bar">
+              {/* eslint-disable-next-line react/no-inline-styles */}
               <div
                 className={`progress-bar-fill ${
                   percentage >= 75

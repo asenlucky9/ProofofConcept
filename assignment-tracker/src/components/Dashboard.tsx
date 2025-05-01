@@ -58,6 +58,7 @@ export default function Dashboard({ assignments }: DashboardProps) {
             <span className="font-medium text-green-600">{stats.completionRate}%</span>
           </div>
           <div className="progress-bar">
+            {/* eslint-disable-next-line react/no-inline-styles */}
             <div
               className={`progress-bar-fill progress-bar-fill-green`}
               style={{"--width": `${stats.completionRate}%`} as React.CSSProperties}
