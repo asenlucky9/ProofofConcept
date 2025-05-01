@@ -9,6 +9,7 @@ import { saveAssignments, loadAssignments } from './lib/storage';
 import { useToast } from './components/ui/use-toast';
 import Dashboard from './components/Dashboard';
 import Reminders from './components/Reminders';
+import Login from './components/Login';
 
 type SortOption = 'dueDate' | 'priority' | 'status';
 type FilterOption = {
@@ -26,6 +27,9 @@ function App() {
   const [showFilters, setShowFilters] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { toast } = useToast();
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return localStorage.getItem('isAuthenticated') === 'true';
+  });
 
   useEffect(() => {
     const loadData = async () => {
@@ -135,10 +139,22 @@ function App() {
 
   const uniqueCourses = Array.from(new Set(assignments.map((a) => a.course)));
 
+  if (!isAuthenticated) {
+    return <Login onLogin={() => {
+      setIsAuthenticated(true);
+      localStorage.setItem('isAuthenticated', 'true');
+    }} />;
+  }
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    localStorage.removeItem('isAuthenticated');
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-        <Navbar />
+        <Navbar onLogout={handleLogout} />
         <main className="container mx-auto px-4 py-8">
           <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>

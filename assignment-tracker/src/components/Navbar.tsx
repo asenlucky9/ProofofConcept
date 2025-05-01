@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  onLogout?: () => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ onLogout }) => {
   return (
     <nav className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg">
       <div className="container mx-auto px-6 py-4">
@@ -30,6 +34,11 @@ const Navbar: React.FC = () => {
                 New Assignment
               </Button>
             </Link>
+            {onLogout && (
+              <Button variant="outline" className="ml-4 bg-white text-blue-600 hover:bg-gray-100" onClick={onLogout}>
+                Logout
+              </Button>
+            )}
           </div>
         </div>
       </div>
