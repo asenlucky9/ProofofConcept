@@ -1,6 +1,6 @@
 [build]
   base = "assignment-tracker"
-  command = "npm install -g typescript && npm install && npm run build"
+  command = "npm install && npm run build"
   publish = "dist"
 
 [build.environment]
@@ -8,6 +8,7 @@
   NPM_FLAGS = "--legacy-peer-deps"
   CI = "true"
   NODE_ENV = "production"
+  PATH = "/opt/buildhome/.nvm/versions/node/v18/bin:/opt/buildhome/.nvm/versions/node/v18/lib/node_modules/bin:/opt/buildhome/.nvm/versions/node/v18/bin:/usr/local/bin:/usr/bin:/bin"
 
 [[redirects]]
   from = "/*"
