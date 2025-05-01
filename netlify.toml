@@ -8,7 +8,6 @@
   NPM_VERSION = "9.6.7"
   NPM_FLAGS = "--legacy-peer-deps"
   CI = "true"
-  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"
