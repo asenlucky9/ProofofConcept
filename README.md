@@ -100,4 +100,17 @@ This project is open source and available under the MIT License.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 🚀 Deployment
+
+The application can be easily deployed to Netlify:
+
+1. Create a Netlify account at [https://app.netlify.com/signup](https://app.netlify.com/signup)
+2. Connect your GitHub repository
+3. Configure the build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+4. Deploy!
+
+The application is configured with a `netlify.toml` file for automatic deployment. 
