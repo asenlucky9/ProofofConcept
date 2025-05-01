@@ -26,7 +26,6 @@ export default function AssignmentForm({ onSubmit, initialData }: AssignmentForm
       toast({
         title: 'Error',
         description: 'Please fill in all required fields',
-        variant: 'destructive',
       });
       return;
     }
